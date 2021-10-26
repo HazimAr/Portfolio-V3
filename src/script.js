@@ -8,7 +8,7 @@ import * as dat from "dat.gui";
  */
 // Debug
 const gui = new dat.GUI();
-gui.hide(); 
+gui.hide();
 
 // Canvas
 const canvas = document.querySelector("canvas.webgl");
@@ -76,6 +76,27 @@ fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
 
     const scale = Math.random();
     donut.scale.set(scale, scale, scale);
+    cube.scale.set(scale, scale, scale);
+
+    const spin = () => {
+      const elapsedTime = clock.getElapsedTime();
+
+      donut.position.x += Math.cos(elapsedTime) * 0.005;
+      donut.position.y += Math.sin(elapsedTime) * 0.005;
+      // donut.position.z += Math.sin(elapsedTime) * 0.005;
+      cube.position.x += Math.cos(elapsedTime) * 0.005;
+      cube.position.y += Math.sin(elapsedTime) * 0.005;
+      // cube.position.z += Math.sin(elapsedTime) * 0.00;
+      donut.rotation.x += 0.01;
+      donut.rotation.y += 0.01;
+      cube.rotation.x += 0.01;
+      cube.rotation.y += 0.01;
+      window.requestAnimationFrame(spin);
+    };
+    // window.requestAnimationFrame(() => {
+    //   donut.rotation.x += 0.01;
+    // });
+    spin();
 
     scene.add(donut, cube);
   }
