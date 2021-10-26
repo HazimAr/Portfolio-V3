@@ -57,7 +57,7 @@ fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
   const donutGeometry = new THREE.TorusGeometry(0.3, 0.2, 20, 45);
   const cubeGeometry = new THREE.BoxGeometry(0.3, 0.3, 0.3);
 
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 50; i++) {
     const donut = new THREE.Mesh(donutGeometry, material);
     const cube = new THREE.Mesh(cubeGeometry, material);
 
