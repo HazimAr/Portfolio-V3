@@ -81,11 +81,11 @@ fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
     const spin = () => {
       const elapsedTime = clock.getElapsedTime();
 
-      donut.position.x += Math.cos(elapsedTime) * 0.005;
-      donut.position.y += Math.sin(elapsedTime) * 0.005;
+      donut.position.x += Math.cos(elapsedTime) * 0.001;
+      donut.position.y += Math.sin(elapsedTime) * 0.001;
       // donut.position.z += Math.sin(elapsedTime) * 0.005;
-      cube.position.x += Math.cos(elapsedTime) * 0.005;
-      cube.position.y += Math.sin(elapsedTime) * 0.005;
+      cube.position.x += Math.cos(elapsedTime) * 0.001;
+      cube.position.y += Math.sin(elapsedTime) * 0.001;
       // cube.position.z += Math.sin(elapsedTime) * 0.00;
       donut.rotation.x += 0.01;
       donut.rotation.y += 0.01;
